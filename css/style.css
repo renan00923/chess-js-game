@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Oswald', Arial, sans-serif;
+}
+.inicio-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.inicio-title {
+  font-size: 3rem;
+  font-family: "Oswald", Arial, sans-serif;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+.inicio-desc {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+.btn-jogar {
+  font-size: 1.2rem;
+  padding: 0.75rem 2.5rem;
+  border-radius: 30px;
+  background: #079cff;
+  color: #232526;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-jogar:hover {
+  background: #0004ff;
+  color: #fff;
+}
+.como-jogar-text {            
+  padding: 1.5rem;
+}
+/* Carousel custom */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+}
+.carousel-inner, .carousel-item, .carousel-item img {
+  height: 100vh;
+}
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.navbar {
+  border-bottom: #0004ff00 2px solid;
+  transition: background 0.3s, box-shadow 0.3s, border-bottom 0.4s ease-in;
+}
+.navbar:hover {
+  border-bottom: #0051ff 2px solid;
+}
+.como-jogar-img:hover, .sobre-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+.como-jogar-img, .sobre-img {
+  transition: transform 0.3s;
+}

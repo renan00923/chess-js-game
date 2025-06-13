@@ -71,8 +71,9 @@ body {
 .mensagemXadrez {
   display: none;
   position: fixed;
-  max-width: 34.3%;
-  min-width: 100%;
+  width: 100%;
+  min-width: 210px;
+  max-width: 470px;
   min-height: 60px;
   padding: 1rem 0.5rem;
   background-color: rgba(0, 0, 0, 0.85);
@@ -81,6 +82,7 @@ body {
   text-align: center;
   font-size: 1.3rem;
   color: #ffe066;
+  margin: 0 auto;
 }
 #promocaoCustom {
   display: none;
@@ -121,4 +123,13 @@ body {
 }
 .btn-promocao-custom img {
   width: 40px;
+}
+.botoes-xadrez {
+  max-width: 470px;
+  min-width: 210px;
+  width: 100%;
+  margin: 0 auto;
+}
+.botoes-xadrez button {
+  min-width: 0;
 }

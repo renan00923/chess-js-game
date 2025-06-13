@@ -76,9 +76,22 @@ $(document).ready(function () {
     }).addClass("d-none"); // Adiciona a classe d-none para esconder o passo 3
     $("#startGame, #next1, #next2, #back2, #back3").hide(); // Esconde os botões de navegação
     // Alerta básico para o jogador sobre a engine do js-chess-engine (problemas de otimização)
+    
+    // Só garante os botões de desfazer e de dica se for na dificuldade random, 1, 2 ou 3
+    if (parseInt($("#dificuldade").val()) < 4 || $("#dificuldade").val() === "aleatorio") {
+      $("#btnUndo").fadeIn(1500).removeClass("d-none");
+      $("#btnDica").fadeIn(1500).removeClass("d-none");
+    } 
+    // Permanece display: none
+    else {
+      $("#btnUndo").addClass("d-none");
+      $("#btnDica").addClass("d-none");
+    }
+    // Alerta para não gerar inconveniências
     if($(`#dificuldade`).val() === "4") {
       alert("Atenção! A dificuldade máxima pode levar mais tempo para calcular os melhores movimentos! Tenha paciência e boa sorte!");
     }
+
     // Chama o jogo de xadrez
     jogoXadrez();
   });
@@ -103,7 +116,7 @@ function jogoXadrez() {
   });
     // Se for mobile, temos a opção de clicar nas casas para mover as peças
     if (isMobile) {
-    let casaSelecionada = null; // Pega a casa selecionada
+    let casaSelecionada = null; // Instância a casa selecionada
     // Eventos de clique nas casas do tabuleiro, quando há uma peça na casa (obviamente)
     $("#tabuleiroXadrez").on("click", ".square-55d63", function() {
       let square = $(this).attr("data-square"); // Pega o data-square da casa clicada do tabuleiro
@@ -111,8 +124,7 @@ function jogoXadrez() {
 
       // Se não houver uma casa selecionada ainda, verifica se a peça é do jogador atual, para não dar conflito 
       if (!casaSelecionada) {
-        if (peca && ((jogo.turn() === "w" && peca.color === "w" && jogadorCor === "white") ||
-                    (jogo.turn() === "b" && peca.color === "b" && jogadorCor === "black"))) {
+        if (peca && peca.color === jogo.turn()) {
           casaSelecionada = square; // Define a casa selecionada no data-square onde a peça foi 
           destacarMovimentos(square); // Destaca os movimentos possíveis da peça selecionada
         }
@@ -511,4 +523,35 @@ function jogoXadrez() {
       }, 200); // pequeno delay para não travar a interface
     }
   }
+  // função para desfazer jogadas anteriores
+  function desfazerJogada() {
+    jogo.undo(); // apaga a jogada anterior com chess.js
+    tabuleiroXadrez.position(jogo.fen()); // atualiza tabuleiro
+    // Se for a máquina que teve seu jogo desfeito, ela continua a jogar depois
+    if ($("#modoJogo").val() === "cpu" && jogo.turn() !== jogadorCor[0]) {
+      jogaMaquina();
+    }
+  }
+  // Garante que o botão funcione
+  $("#btnUndo").on("click", desfazerJogada);
+  
+  // Ao clicar no botão dica
+  $("#btnDica").on("click", function() {
+
+    // Usa a engine para sugerir o melhor movimento (nível 3)
+    const engine = new window["js-chess-engine"].Game(jogo.fen());
+    const bestMove = engine.aiMove(3);
+
+    // Extrai origem e destino do objeto retornado pela engine
+    let origem = Object.keys(bestMove)[0];
+    let destino = bestMove[origem];
+
+    // Converte para minúsculo para compatibilidade com o chess.js
+    origem = origem.toLowerCase();
+    destino = destino.toLowerCase();
+
+    removerDestaque(); // remove destaque
+    destacarCasa(origem, destino); // destaca origem e destino
+    mostrarMensagem(`Dica: ${origem} - ${destino}`, "#66d9ff", "0 0 12px #66d9ffcc"); // manda uma msg
+  });
 }

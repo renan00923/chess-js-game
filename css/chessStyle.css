@@ -71,7 +71,8 @@ body {
 .mensagemXadrez {
   display: none;
   position: fixed;
-  width: 34.3%;
+  max-width: 34.3%;
+  min-width: 100%;
   min-height: 60px;
   padding: 1rem 0.5rem;
   background-color: rgba(0, 0, 0, 0.85);

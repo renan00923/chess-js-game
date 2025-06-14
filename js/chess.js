@@ -552,6 +552,5 @@ function jogoXadrez() {
 
     removerDestaque(); // remove destaque
     destacarCasa(origem, destino); // destaca origem e destino
-    mostrarMensagem(`Dica: ${origem} - ${destino}`, "#66d9ff", "0 0 12px #66d9ffcc"); // manda uma msg
   });
 }

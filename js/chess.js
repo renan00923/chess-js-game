@@ -523,13 +523,20 @@ function jogoXadrez() {
       }, 200); // pequeno delay para não travar a interface
     }
   }
+
   // função para desfazer jogadas anteriores
   function desfazerJogada() {
-    jogo.undo(); // apaga a jogada anterior com chess.js
-    tabuleiroXadrez.position(jogo.fen()); // atualiza tabuleiro
-    // Se for a máquina que teve seu jogo desfeito, ela continua a jogar depois
-    if ($("#modoJogo").val() === "cpu" && jogo.turn() !== jogadorCor[0]) {
-      jogaMaquina();
+    // verifica se tem jogada para voltar
+    if(jogo.history().length > 0) {
+      // pega o turno antes de desfazer para não ter risco da máquina assumir a jogada do jogador
+      let turnoAntes = jogo.turn();
+      jogo.undo(); // apaga a jogada anterior com chess.js
+      tabuleiroXadrez.position(jogo.fen()); // atualiza tabuleiro
+      maquinaJogando = false
+      // Se for a máquina que teve seu jogo desfeito, ela continua a jogar depois
+      if ($("#modoJogo").val() === "cpu" && jogo.turn() !== jogadorCor[0] && turnoAntes !== jogadorCor[0]) {
+        jogaMaquina();
+      }
     }
   }
   // Garante que o botão funcione

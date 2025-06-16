@@ -296,6 +296,7 @@ function jogoXadrez() {
   function finalizarMovimento(move, origem, destino) {
     if (!move) return "snapback"; // retorna tudo se não for válido
     tabuleiroXadrez.position(jogo.fen()); // atualiza o tabuleiro com a nova posição
+    $("#btnUndo").prop("disabled", false); // atualiza btnUndo
     destacarMovimentos(origem); // destaca os movimentos possíveis da peça selecionada
     removerDestaque(); // remove o destaque dos movimentos feitos
     destacarCasa(origem, destino); // destaca a casa de origem e destino
@@ -481,7 +482,6 @@ function jogoXadrez() {
           to: destino,
           promotion: "q"
         });
-
         finalizarMovimento(move, origem, destino);
         maquinaJogando = false;
       }, 700); // tempo curto para aleatório
@@ -515,7 +515,7 @@ function jogoXadrez() {
             to: destino,
             promotion: "q"
           });
-
+          $("#btnUndo").prop("disabled", false);
           finalizarMovimento(move, origem, destino);
           maquinaJogando = false;
 
@@ -524,23 +524,38 @@ function jogoXadrez() {
     }
   }
 
-  // função para desfazer jogadas anteriores
+  // contador para a quantidade de undos não ultrapassar a quantidade certa
+  let contadorUndos = 0;
+  /// reset para timeout
+  let timeoutUndo;
+
   function desfazerJogada() {
-    // verifica se tem jogada para voltar
-    if(jogo.history().length > 0) {
-      // pega o turno antes de desfazer para não ter risco da máquina assumir a jogada do jogador
-      let turnoAntes = jogo.turn();
-      jogo.undo(); // apaga a jogada anterior com chess.js
-      tabuleiroXadrez.position(jogo.fen()); // atualiza tabuleiro
-      maquinaJogando = false
-      // Se for a máquina que teve seu jogo desfeito, ela continua a jogar depois
-      if ($("#modoJogo").val() === "cpu" && jogo.turn() !== jogadorCor[0] && turnoAntes !== jogadorCor[0]) {
-        jogaMaquina();
+      // verifica se o histórico não é 0 jogadas antes de habilitar o botão
+      if (jogo.history().length === 0) {
+          $("#btnUndo").prop("disabled", true);
+          return;
       }
-    }
+      // desfaz jogada
+      jogo.undo();
+      // Atualiza tabuleiro
+      tabuleiroXadrez.position(jogo.fen());
+
+      contadorUndos++; // incrementa o contador de desfazimentos
+      clearTimeout(timeoutUndo); // Reseta qualquer timeout pendente pra não ocorrer problemas
+
+      timeoutUndo = setTimeout(() => {
+          if ($("#modoJogo").val() === "cpu" && jogo.turn() !== jogadorCor[0]) {
+              jogaMaquina();
+          }
+          contadorUndos = 0; // Reseta o contador após a ação
+      }, 500); // Tempo de espera antes de chamar a máquina
   }
+
   // Garante que o botão funcione
-  $("#btnUndo").on("click", desfazerJogada);
+  $("#btnUndo").on("click", function() {
+    desfazerJogada();
+  });
+
   
   // Ao clicar no botão dica
   $("#btnDica").on("click", function() {

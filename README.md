@@ -39,7 +39,7 @@
 
 <h2>Screenshot</h2>
 <p align="center">
-  <img src="https://renan00923.github.io/chess-js-game/assets/img/chessboard.png" 
+  <img src="https://renan00923.github.io/chess-js-game/assets/img/screenshot1.png" 
        alt="Chess JS Game Screenshot" 
        width="600" />
 </p>

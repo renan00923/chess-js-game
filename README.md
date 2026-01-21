@@ -37,10 +37,13 @@
 <pre><code>npx serve</code></pre>
 <p>Depois acesse <code>http://localhost:3000</code></p>
 
-<h2>Screenshots</h2>
+<h2>Screenshot</h2>
 <p align="center">
-  <img src="https://via.placeholder.com/600x400?text=Chess+JS+Game+Screenshot" alt="Screenshot do jogo" />
+  <img src="https://renan00923.github.io/chess-js-game/images/screenshot.png" 
+       alt="Chess JS Game Screenshot" 
+       width="600" />
 </p>
+
 
 <h2>Tecnologias utilizadas</h2>
 <ul>

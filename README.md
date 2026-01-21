@@ -38,11 +38,24 @@
 <p>Depois acesse <code>http://localhost:3000</code></p>
 
 <h2>Screenshots</h2>
-<a href="https://ibb.co/SwqQH0zX"><img src="https://i.ibb.co/606vGbkR/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-3.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-3" border="0"></a>
-<a href="https://ibb.co/rK8K8NQn"><img src="https://i.ibb.co/j9090s87/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-2.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-2" border="0"></a>
-<a href="https://ibb.co/pjS5kCB0"><img src="https://i.ibb.co/HTj39mfF/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-1.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-1" border="0"></a>
-<a href="https://ibb.co/9mSYRck5"><img src="https://i.ibb.co/rKNynFRr/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max" border="0"></a>
-<a href="https://ibb.co/PsS9HQq8"><img src="https://i.ibb.co/MyXG06FL/renan00923-github-io-chess-js-game-Nest-Hub-Max-1.png" alt="renan00923-github-io-chess-js-game-Nest-Hub-Max-1" border="0"></a>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+  <a href="https://ibb.co/SwqQH0zX">
+    <img src="https://i.ibb.co/606vGbkR/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-3.png" alt="Screenshot 1" style="width:100%; border-radius:8px;" />
+  </a>
+  <a href="https://ibb.co/rK8K8NQn">
+    <img src="https://i.ibb.co/j9090s87/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-2.png" alt="Screenshot 2" style="width:100%; border-radius:8px;" />
+  </a>
+  <a href="https://ibb.co/pjS5kCB0">
+    <img src="https://i.ibb.co/HTj39mfF/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-1.png" alt="Screenshot 3" style="width:100%; border-radius:8px;" />
+  </a>
+  <a href="https://ibb.co/9mSYRck5">
+    <img src="https://i.ibb.co/rKNynFRr/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max.png" alt="Screenshot 4" style="width:100%; border-radius:8px;" />
+  </a>
+  <a href="https://ibb.co/PsS9HQq8">
+    <img src="https://i.ibb.co/MyXG06FL/renan00923-github-io-chess-js-game-Nest-Hub-Max-1.png" alt="Screenshot 5" style="width:100%; border-radius:8px;" />
+  </a>
+</div>
+
 
 
 

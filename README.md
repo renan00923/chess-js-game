@@ -2,20 +2,22 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/jQuery-3.x-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge" />
   <img src="https://img.shields.io/badge/HTML5-orange?style=for-the-badge" />
   <img src="https://img.shields.io/badge/CSS3-blue?style=for-the-badge" />
 </p>
 
 <p align="center">
-  Um jogo de xadrez responsivo desenvolvido em <b>JavaScript puro</b>, <b>HTML5</b> e <b>CSS3</b>.
+  Um jogo de xadrez responsivo desenvolvido em <b>JavaScript (ES6+)</b>, <b>jQuery</b>, <b>Bootstrap</b>, <b>HTML5</b> e <b>CSS3</b>.
 </p>
 
 <hr/>
 
-<h2>🚀 Funcionalidades</h2>
+<h2>Funcionalidades</h2>
 <ul>
-  <li>Tabuleiro completo em HTML/CSS</li>
-  <li>Movimentos das peças implementados em JavaScript (ES6+)</li>
+  <li>Tabuleiro completo em HTML/CSS estilizado com Bootstrap</li>
+  <li>Movimentos das peças implementados em JavaScript (ES6+) e jQuery</li>
   <li>Validação de jogadas conforme regras oficiais</li>
   <li>Interface responsiva para desktop e mobile</li>
 </ul>
@@ -43,6 +45,8 @@
 <h2>Tecnologias utilizadas</h2>
 <ul>
   <li>JavaScript (ES6+)</li>
+  <li>jQuery</li>
+  <li>Bootstrap 5</li>
   <li>HTML5</li>
   <li>CSS3</li>
 </ul>
@@ -50,7 +54,7 @@
 <h2>Objetivo</h2>
 <p>
   Esse projeto foi desenvolvido como estudo de lógica de programação aplicada em jogos,
-  manipulação do DOM com JavaScript e design responsivo.
+  manipulação do DOM com JavaScript/jQuery e design responsivo com Bootstrap.
 </p>
 
 <h2>Contribuições</h2>

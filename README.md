@@ -38,19 +38,11 @@
 <p>Depois acesse <code>http://localhost:3000</code></p>
 
 <h2>Screenshots</h2>
-<p align="center">
-  <img src="https://i.ibb.co/SwqQH0zX/screenshot1.png" alt="Screenshot 1" width="45%" />
-  <img src="https://i.ibb.co/rK8K8NQn/screenshot2.png" alt="Screenshot 2" width="45%" />
-</p>
-
-<p align="center">
-  <img src="https://i.ibb.co/pjS5kCB0/screenshot3.png" alt="Screenshot 3" width="45%" />
-  <img src="https://i.ibb.co/9mSYRck5/screenshot4.png" alt="Screenshot 4" width="45%" />
-</p>
-
-<p align="center">
-  <img src="https://i.ibb.co/PsS9HQq8/screenshot5.png" alt="Screenshot 5" width="60%" />
-</p>
+<a href="https://ibb.co/SwqQH0zX"><img src="https://i.ibb.co/606vGbkR/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-3.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-3" border="0"></a>
+<a href="https://ibb.co/rK8K8NQn"><img src="https://i.ibb.co/j9090s87/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-2.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-2" border="0"></a>
+<a href="https://ibb.co/pjS5kCB0"><img src="https://i.ibb.co/HTj39mfF/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-1.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max-1" border="0"></a>
+<a href="https://ibb.co/9mSYRck5"><img src="https://i.ibb.co/rKNynFRr/renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max.png" alt="renan00923-github-io-chess-js-game-chess-html-Nest-Hub-Max" border="0"></a>
+<a href="https://ibb.co/PsS9HQq8"><img src="https://i.ibb.co/MyXG06FL/renan00923-github-io-chess-js-game-Nest-Hub-Max-1.png" alt="renan00923-github-io-chess-js-game-Nest-Hub-Max-1" border="0"></a>
 
 
 
